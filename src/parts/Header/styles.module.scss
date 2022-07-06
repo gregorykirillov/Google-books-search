@@ -1,0 +1,42 @@
+@import "~/src/common/colors";
+@import "~/src/common/screens";
+
+.header {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 250px;
+
+    color: #fff;
+    background: url('/public/img/BG.jpg');
+
+    .logoText {
+        font-size: 24px;
+        font-weight: 600;
+
+        margin-left: 20px;
+        
+        color: $black;
+    }
+    
+    .backButton {
+        position: absolute;
+
+        bottom: 15px;
+        left: 15px;
+        transition: .3s;
+
+        &::after {
+            transform: translateX(-100px);
+        }
+
+        &[hidden] {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-100px);
+        }
+    }
+}

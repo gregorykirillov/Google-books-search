@@ -1,0 +1,47 @@
+@import "~/src/common/screens";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+}
+
+.section {
+    position: relative;
+}
+
+section, header, footer {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+@media (min-width: $screen_xs) {
+    section, header, footer {
+        width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: $screen_sm) {
+    section, header, footer {
+        width: 720px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: $screen_md) {
+    section, header, footer {
+        width: 960px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: $screen_lg) {
+    section, header, footer {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
