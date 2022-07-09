@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { BookPage, SearchPage } from '~/src/pages';
 import { Header, Footer } from '~/src/parts';
+import { getMainPath, getBookPath } from '../routes';
 
 const App = () => {
     return (
@@ -9,8 +10,8 @@ const App = () => {
             <Header />
             <div>
                 <Routes>
-                    <Route path="/" element={<SearchPage />} />
-                    <Route path="/Book/:id" element={<BookPage />} />
+                    <Route path={getMainPath} element={<SearchPage />} />
+                    <Route path={getBookPath} element={<BookPage />} />
                 </Routes>
             </div>
             <Footer />

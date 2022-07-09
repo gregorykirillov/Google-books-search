@@ -5,14 +5,15 @@ import { SearchBlock } from './components';
 import { Button } from '~/src/uikit';
 
 import styles from './styles.module.scss';
+import { BASE_URL } from '~/src/settings';
 
 const Header = () => {
     const location = useLocation().pathname;
-    const [isMainPage, setMainPage] = useState(location !== '/');
+    const [isMainPage, setMainPage] = useState(location !== `${BASE_URL}`);
     const navigate = useNavigate();
 
     const onButtonClick = () => {
-        navigate('/');
+        navigate(`${BASE_URL}`);
     };
 
     useEffect(() => {

@@ -40,3 +40,12 @@
         }
     }
 }
+
+@media all and (max-width: 576px) {
+    .header {
+        .backButton {
+            left: 5px;
+            bottom: -45px;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 .foundBooks {
     text-align: center;
     font-weight: 600;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .category, .authors {
@@ -81,5 +81,9 @@
 @media all and (max-width: 768px) {
     .itemsBlock {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .itemBlock {
+        font-size: 16px;
     }
 }
