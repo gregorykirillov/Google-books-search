@@ -7,6 +7,7 @@ import Books from '~/src/store/Books';
 import searchSvg from '~/public/icons/search.svg';
 
 import styles from './styles.module.scss';
+import { BASE_URL } from '~/src/settings';
 
 const categories = [
     'All',
@@ -30,7 +31,7 @@ const SearchBlock = () => {
 
     const onSubmitForm = (e: React.FormEvent) => {
         e.preventDefault();
-        if (pathname !== '/') navigate('/');
+        if (pathname !== BASE_URL) navigate(BASE_URL);
 
         Books.setSearchParams({
             string: searchInput,

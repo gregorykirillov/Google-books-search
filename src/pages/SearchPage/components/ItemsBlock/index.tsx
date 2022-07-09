@@ -8,6 +8,7 @@ import { Button, Preloader } from '~/src/uikit';
 import noPhoto from '~/public/icons/noPhoto.svg';
 
 import styles from './styles.module.scss';
+import { getBookParamPath } from '~/src/routes';
 
 type VolumeInfo = {
     title: string;
@@ -27,7 +28,7 @@ const ItemsBlock = observer(() => {
     };
 
     const onClickItem = (id: string) => {
-        navigate(`/Book/${id}`);
+        navigate(getBookParamPath(id));
     };
 
     const booksItems = Books.Books;
