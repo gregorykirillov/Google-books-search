@@ -7,6 +7,7 @@ import Books from '~/src/store/Books';
 import noPhoto from '~/public/icons/noPhoto.svg';
 
 import styles from './styles.module.scss';
+import { ScrollTop } from '~/src/helpers';
 
 type VolumeInfo = {
     title: string;
@@ -48,25 +49,30 @@ const BookPage = () => {
         targetBook.volumeInfo;
 
     return (
-        <div className={styles.container}>
-            <div className={styles.imageBlock}>
-                <img
-                    src={imageLinks?.smallThumbnail || noPhoto}
-                    className={
-                        imageLinks?.smallThumbnail
-                            ? styles.thumbnail
-                            : styles.noPhoto
-                    }
-                    alt="Thumbnail of book"
-                />
+        <section>
+            <ScrollTop />
+            <div className={styles.container}>
+                <div className={styles.imageBlock}>
+                    <img
+                        src={imageLinks?.smallThumbnail || noPhoto}
+                        className={
+                            imageLinks?.smallThumbnail
+                                ? styles.thumbnail
+                                : styles.noPhoto
+                        }
+                        alt="Thumbnail of book"
+                    />
+                </div>
+                <div className={styles.infoBlock}>
+                    <p className={styles.categories}>
+                        {categories?.join(', ')}
+                    </p>
+                    <h1 className={styles.title}>{title}</h1>
+                    <p className={styles.authors}>{authors?.join(', ')}</p>
+                    <p className={styles.description}>{description}</p>
+                </div>
             </div>
-            <div className={styles.infoBlock}>
-                <p className={styles.categories}>{categories?.join(', ')}</p>
-                <h1 className={styles.title}>{title}</h1>
-                <p className={styles.authors}>{authors?.join(', ')}</p>
-                <p className={styles.description}>{description}</p>
-            </div>
-        </div>
+        </section>
     );
 };
 

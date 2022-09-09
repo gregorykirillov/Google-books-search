@@ -1,7 +1,4 @@
-export const BASE_URL =
-    process.env.NODE_ENV !== 'production' || !process.env.NODE_ENV
-        ? '/'
-        : '/Future-ts-project/';
+export const BASE_URL = '/';
 
 export const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 

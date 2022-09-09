@@ -4,13 +4,13 @@
     display: inline-block;
     font-size: 16px;
 
-    padding: 1px 7px 2px;
+    padding: 3px 5px;
     margin: 5px;
 
     border-color: $gray;
     border-style: solid;
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 5px;
 
     text-rendering: auto;
     text-align: start;
@@ -19,15 +19,6 @@
 
     transition: .3s;
     cursor: pointer;
-
-    &.sm {
-        border-radius: 3px;
-    }
-
-    &.md {
-        height: 45px;
-        border-radius: 3px;
-    }
 
     &:hover {
         filter: brightness(0.9);

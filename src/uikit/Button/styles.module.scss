@@ -10,7 +10,7 @@
     border-color: $gray;
     border-style: solid;
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: 10px;
 
     text-rendering: auto;
     text-align: start;
@@ -21,12 +21,12 @@
     cursor: pointer;
 
     &.sm {
-        border-radius: 2px;
+        border-radius: 5px;
     }
 
     &.md {
         height: 30px;
-        border-radius: 2px;
+        border-radius: 7px;
     }
 
     &:hover {

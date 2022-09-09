@@ -34,7 +34,7 @@ const ItemsBlock = observer(() => {
     const booksItems = Books.Books;
 
     return (
-        <>
+        <section className={styles.itemsBlockWrapper}>
             {Books.totalItems !== null && (
                 <p className={styles.foundBooks}>
                     Found {Books.totalItems} results
@@ -55,29 +55,34 @@ const ItemsBlock = observer(() => {
                                 className={styles.itemBlock}
                                 onClick={() => onClickItem(id)}
                             >
-                                <img
-                                    src={
-                                        volumeInfo?.imageLinks
-                                            ?.smallThumbnail || noPhoto
-                                    }
-                                    className={cn(
-                                        styles.thumbnail,
-                                        volumeInfo?.imageLinks
-                                            ?.smallThumbnail ?? styles.noPhoto,
-                                    )}
-                                    alt="Thumbnail of book"
-                                />
-                                <div>
-                                    <p className={styles.category}>
-                                        {volumeInfo.categories?.[0]}
+                                <div className={styles.imageWrapper}>
+                                    <img
+                                        src={
+                                            volumeInfo?.imageLinks
+                                                ?.smallThumbnail || noPhoto
+                                        }
+                                        className={cn(
+                                            styles.thumbnail,
+                                            volumeInfo?.imageLinks
+                                                ?.smallThumbnail ??
+                                                styles.noPhoto,
+                                        )}
+                                        alt="Thumbnail of book"
+                                    />
+                                </div>
+                                <div className={styles.infoBlock}>
+                                    <div>
+                                        <p className={styles.category}>
+                                            {volumeInfo.categories?.[0]}
+                                        </p>
+                                    </div>
+                                    <p>
+                                        <b>{volumeInfo.title}</b>
+                                    </p>
+                                    <p className={styles.authors}>
+                                        {volumeInfo.authors?.join(', ')}
                                     </p>
                                 </div>
-                                <p className={styles.title}>
-                                    <b>{volumeInfo.title}</b>
-                                </p>
-                                <p className={styles.authors}>
-                                    {volumeInfo.authors?.join(', ')}
-                                </p>
                             </button>
                         );
                     },
@@ -86,13 +91,12 @@ const ItemsBlock = observer(() => {
             {Books.isLoading && <Preloader />}
             {Books.totalItems !== null &&
                 Books.totalItems > Books.searchParams.startIndex &&
-                !Books.isLoading &&
-                Books.isLoading === false && (
+                !Books.isLoading && (
                     <Button className={styles.loadMore} onClick={onLoadMore}>
                         Load more
                     </Button>
                 )}
-        </>
+        </section>
     );
 });
 

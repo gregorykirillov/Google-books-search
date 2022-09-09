@@ -12,7 +12,7 @@
 }
 
 section, header, footer {
-    width: 90vw;
+    width: 80vw;
     margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@ section, header, footer {
 
 @media (min-width: 1200px) {
     section, header, footer {
-        width: 1200px;
+        width: 1140px;
         margin: 0 auto;
     }
 }

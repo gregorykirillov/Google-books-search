@@ -9,15 +9,15 @@ import { BASE_URL } from '~/src/settings';
 
 const Header = () => {
     const location = useLocation().pathname;
-    const [isMainPage, setMainPage] = useState(location !== `${BASE_URL}`);
-    const navigate = useNavigate();
+    const [isMainPage, setMainPage] = useState(true);
 
     const onButtonClick = () => {
-        navigate(`${BASE_URL}`);
+        history.back();
     };
 
     useEffect(() => {
-        setMainPage(!isMainPage);
+        const pageIsMain = location === BASE_URL;
+        setMainPage(pageIsMain);
     }, [location]);
 
     return (
